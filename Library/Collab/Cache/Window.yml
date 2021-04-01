@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   SimpleSelectedItems:
     m_Keys:
-    - Assets/Scenes/main menu.unity
+    - Assets/Scenes/VictoryScene.unity
     - 
     m_Values: 0101
   RevisionSummary: 

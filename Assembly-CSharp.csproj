@@ -74,6 +74,7 @@
      <Compile Include="Assets\zex\cvtools\script\TagsManager.cs" />
      <Compile Include="Assets\CarScripts\CarAgent.cs" />
      <Compile Include="Assets\Scripts\Shader Scripts\MLInput.cs" />
+     <Compile Include="Assets\Scripts\Car Scripts\AutoStabilize.cs" />
      <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile Overlay.shader" />
      <None Include="Assets\Scripts\Shader Scripts\DepthSegmentationShader.shader" />

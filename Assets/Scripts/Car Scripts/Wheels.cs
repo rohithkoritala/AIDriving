@@ -11,13 +11,14 @@ public class Wheels : MonoBehaviour //This class controls the wheels which power
     public float WheelAngleY = 0f;
     public float WheelAngleZ = 0f;
 
-    public float speed; //value to see speed of car. DO NOT EDIT IN VIEWER
+    public float speed; //value to see speed of car. DO NOT EDIT IN INSPECTOR
 
     public WheelCollider wheelFL;
     public WheelCollider wheelFR;
     public WheelCollider wheelBL;
     public WheelCollider wheelBR;
 
+    public float TorqueMultiplier = 0; //for when low speeds to help accelerate
     public float MotorTorque = 0;
     public float BrakeTorque = 0;
 
@@ -43,9 +44,9 @@ public class Wheels : MonoBehaviour //This class controls the wheels which power
             wheelBL.brakeTorque = 0f;
             wheelBR.brakeTorque = 0f;
 
-            if(speed < 5) { //Car go fast when slow until fast enough, then normal speed
-                wheelBL.motorTorque = MotorTorque + (MotorTorque * 5);
-                wheelBR.motorTorque = MotorTorque + (MotorTorque * 5);
+            if(speed < 5) { //Car go fast when slow, until fast enough, then normal speed
+                wheelBL.motorTorque = MotorTorque + (MotorTorque * TorqueMultiplier);
+                wheelBR.motorTorque = MotorTorque + (MotorTorque * TorqueMultiplier);
 			}
 		}
         if(Input.GetKey("s")){ //Brake
@@ -55,8 +56,8 @@ public class Wheels : MonoBehaviour //This class controls the wheels which power
             if(speed < 5) { //if slowed down enough, stop braking and go backwards
                 wheelBL.brakeTorque = 0f;
                 wheelBR.brakeTorque = 0f;
-                wheelBL.motorTorque = MotorTorque - (MotorTorque * 5);
-                wheelBR.motorTorque = MotorTorque - (MotorTorque * 5);
+                wheelBL.motorTorque = MotorTorque - (MotorTorque * TorqueMultiplier);
+                wheelBR.motorTorque = MotorTorque - (MotorTorque * TorqueMultiplier);
 			}
             
             

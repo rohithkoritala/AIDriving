@@ -8,11 +8,13 @@ public class SceneLoader : MonoBehaviour
 
         public void GotoSelectionScene()
         {
+            GlobalVariables.LapComplete = true;
             SceneManager.LoadScene("selection");
         }
 
         public void GotoMenuScene()
         {
+            GlobalVariables.LapComplete = true;
             SceneManager.LoadScene("main menu");
         }
 
@@ -22,6 +24,7 @@ public class SceneLoader : MonoBehaviour
         }
         public void GotoRaceScene()
         {
+            GlobalVariables.LapComplete = true;
             SceneManager.LoadScene("CarTestScene");
         }
         public void GotoExitScene()
